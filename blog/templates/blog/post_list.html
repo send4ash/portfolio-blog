@@ -1,4 +1,24 @@
+{% load staticfiles %} <!--For loading CSS files later-->
+
 <html>
-  <p>Hi there!</p>
-  <p>It works!</p>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <!--Boostrap: latest compiled and minifed CSS-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> <!--Boostrap: optional theme-->
+    <link rel="stylesheet" href="{% static 'css/blog.css'%}"> <!--Links to CSS file-->
+    <title>Ashley's blog</title>
+  </head>
+  <body>
+    <div>
+        <h1><a href="">Ashley's blog</a></h1>
+        <h3>Welcome to my blog!</h3>
+    </div>
+      {% for post in posts %} <!--Loop: display posts list-->
+        <div>
+          <p> published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
+          <div>
+      {% endfor %}
+    </div>
+  </body>
 </html>
