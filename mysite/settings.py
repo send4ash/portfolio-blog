@@ -68,6 +68,10 @@ TEMPLATES = [
     },
 ]
 
+
+# Login Redirect
+LOGIN_REDIRECT_URL='/'
+
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 

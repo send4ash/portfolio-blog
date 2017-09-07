@@ -5,23 +5,26 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <!--Boostrap: latest compiled and minifed CSS-->
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> <!--Boostrap: optional theme-->
       <link rel="stylesheet" href="{% static 'css/blog.css'%}"> <!--Links to CSS file-->
-      <link href="https://fonts.googleapis.com/css?family=Taviraj:400,700i" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lato|Montserrat" rel="stylesheet">
     </head>
     <body>
-    <div class="page-header">
-      {% if user.is_autheticated %} <!-- For logged in users only -->
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> <!--Post new URL and button -->
-      {% endif %}
-      <h1><a href="">Ashley's Blog</a></h1>
-      <h3>Welcome to my blog!</h3>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}  <!-- Block for HTML extension of this template-->
-            {% endblock %}
-            </div>
+      <div class="page-header">
+        {% if user.is_authenticated %} <!-- For logged in users only -->
+          <a href="{% url 'post_new' %}" class="top-button"><span class="glyphicon glyphicon-plus"></span></a> <!--Link new post to add button -->
+          <a href="{% url 'post_draft_list' %}" class="top-button"><span class="glyphicon glyphicon-edit"></span></a>" <!-- Link draft list to edit button-->
+          <p class="top-menu"> Hello, {{ user.username }}!<small>(<a href="{% url 'logout' %}"> Log out</a>)</small>
+        {% else %}
+          <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        {% endif %}
+          <h1><a href="/">Ashley's Blog</a></h1>
         </div>
-    </div>
-</body>
+        <div class="content container">
+          <div class="row">
+              <div class="col-md-8">
+                {% block content %}  <!-- Block for HTML extension of this template-->
+                {% endblock %}
+              </div>
+            </div>
+          </div>
+  </body>
 </html>
