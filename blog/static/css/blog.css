@@ -1,7 +1,23 @@
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.bg {
+  background-image: url("https://images.unsplash.com/photo-1415979733006-ec911cf8e6df?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=844d342de8df4d6b8244dd590d51bd59");
+  min-height: 1000px;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1 a {
   color: #052EA1;
   font-family: 'Bungee Shade', cursive;
 }
+
 
 h2, h2 a {
   color: #801824;
@@ -13,7 +29,7 @@ h2 a:hover {
 }
 
 body {
-  padding-left: 15px;
+  color: #801824;
 }
 
 p {
@@ -23,7 +39,7 @@ p {
 .page-header {
     background-color: #801824;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -32,12 +48,19 @@ p {
     text-decoration: none;
 }
 
+.row {
+  background-color: #E3BC91;
+  border: 2px solid white;
+  outline-style: ridge;
+}
+
+
 .content {
     margin-left: 40px;
 }
 
 .date {
-    color: #828282;
+    color: #172E63;
 }
 
 .save {
@@ -49,17 +72,41 @@ p {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #E3BC91;
     float: right;
+    position: relative;
+    left: 90;
     font-size: 14pt;
     margin-right: 20px;
 }
 
+
 .top-button {
-  color: #ffffff;
+  color: #fff;
+  text-shadow: 2px 2px 5px black;
   float: right;
+  position: relative;
+  top: 55;
+  left: 0;
   font-size: 26pt;
   margin-right: 20px;
+}
+
+
+.top-button:hover{
+  color: #172E63;
+}
+
+#top-link {
+  color: #EDDBC7;
+  float: right;
+  position:relative;
+  bottom: -4;
+  left: 5;
+}
+
+#top-link:hover {
+  color: #fff;
 }
 
 .post {
@@ -73,4 +120,12 @@ p {
 .comment {
     margin: 20px 0px 20px 20px;
     font-family: 'Lato', sans-serif;
+}
+
+#commentlink a {
+  color: #801824;
+}
+
+#commentlink a:hover{
+  color: #000;
 }

@@ -70,7 +70,7 @@ TEMPLATES = [
 
 
 # Login Redirect
-LOGIN_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
@@ -124,3 +124,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') # Added path for static files
+
+# Heroku configuration and import local database settings
+
+import dj_database_url
+DATABASES['default']= dj_database_url.config()
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO','https')
+
+ALLOWED_HOSTS = ['*']
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
