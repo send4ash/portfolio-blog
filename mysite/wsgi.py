@@ -17,5 +17,5 @@ application = get_wsgi_application()
 
 
 # Import mysite/local_settings.py
-from whitenoise import DjangoWhiteNoise
+from whitenoise.django import DjangoWhiteNoise
 application = DjangoWhiteNoise(application)
