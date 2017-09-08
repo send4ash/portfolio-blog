@@ -14,3 +14,8 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 
 application = get_wsgi_application()
+
+
+# Import mysite/local_settings.py
+from whitenoise import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
